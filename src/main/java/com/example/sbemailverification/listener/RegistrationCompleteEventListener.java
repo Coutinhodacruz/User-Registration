@@ -22,7 +22,7 @@ public class RegistrationCompleteEventListener implements ApplicationListener<Re
 
     private final UserServices userServices;
 
-    private final JavaMailSender mailSender;
+   private final JavaMailSender mailSender;
 
     private  User theUser;
 
@@ -58,7 +58,7 @@ public class RegistrationCompleteEventListener implements ApplicationListener<Re
                 "<p> Thank you <br> Users Registration Portal Service";
         MimeMessage message = mailSender.createMimeMessage();
         var messageHelper = new MimeMessageHelper(message);
-        messageHelper.setFrom("coutinhodacruz@gmal.com", senderName);
+        messageHelper.setFrom("coutinhodacruz10@gmail.com", senderName);
         messageHelper.setTo(theUser.getEmail());
         messageHelper.setSubject(subject);
         messageHelper.setText(mailContent, true);

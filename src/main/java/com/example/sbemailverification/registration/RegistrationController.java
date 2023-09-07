@@ -35,7 +35,7 @@ public class RegistrationController {
     public String verifyEmail(@RequestParam("token") String token){
         VerificationToken theToken = tokenRepository.findByToken(token);
         if (theToken.getUser().isEnabled()){
-            return "This account has already been verify";
+            return "This account has already been verify please login";
         }
         String verificationResult = userServices.validateToken(token);
         if (verificationResult.equalsIgnoreCase("valid")){
@@ -45,10 +45,6 @@ public class RegistrationController {
         }
 
     }
-
-
-
-
 
 
     public String applicationUrl(HttpServletRequest request) {

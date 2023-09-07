@@ -32,20 +32,24 @@ public class VerificationToken {
         super();
         this.token = token;
         this.user = user;
-        this.expirationTime = this.getExpirationTime();
+        this.expirationTime = this.getTokenExpirationTime();
 
     }
+
+
 
     public VerificationToken(String token) {
         super();
         this.token = token;
-        this.expirationTime = this.getExpirationTime();
+        this.expirationTime = this.getTokenExpirationTime();
     }
 
-    public Date getExpirationTime() {
+    private Date getTokenExpirationTime() {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(new  Date().getTime());
         calendar.add(Calendar.MINUTE, EXPIRATION_TIME);
         return new Date(calendar.getTime().getTime());
     }
+
+
 }

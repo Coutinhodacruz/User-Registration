@@ -15,9 +15,6 @@ import java.util.stream.Collectors;
 @Data
 public class UserRegistrationDetails implements UserDetails {
 
-
-
-
     private String userName;
     private String password;
     private boolean isEnabled;
